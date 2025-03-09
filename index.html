@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>יוצר תמונות SVG חכם</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">SVG<span>יוצר</span></div>
+            <p class="tagline">צור תמונות וקטוריות מדהימות בקלות</p>
+        </header>
+
+        <div class="generator-container">
+            <div class="controls">
+                <h2 class="section-title">הגדרות יצירה</h2>
+
+                <div class="form-group">
+                    <label for="prompt">תיאור התמונה</label>
+                    <textarea id="prompt" rows="3" placeholder="לדוגמה: נוף הרים עם אגם ושמש זורחת"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>סגנון גרפי</label>
+                    <select id="style">
+                        <option value="minimal">מינימליסטי</option>
+                        <option value="abstract">אבסטרקטי</option>
+                        <option value="geometric">גיאומטרי</option>
+                        <option value="natural">טבעי</option>
+                        <option value="cartoon">קריקטורה</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>ערכת צבעים</label>
+                    <div class="colors-row">
+                        <div class="color-picker">
+                            <span class="color-label">צבע ראשי</span>
+                            <input type="color" id="color1" value="#3498db">
+                        </div>
+                        <div class="color-picker">
+                            <span class="color-label">צבע משני</span>
+                            <input type="color" id="color2" value="#2ecc71">
+                        </div>
+                        <div class="color-picker">
+                            <span class="color-label">צבע רקע</span>
+                            <input type="color" id="background" value="#ecf0f1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>מורכבות</label>
+                    <input type="range" id="complexity" min="1" max="5" value="3">
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn" id="generate-btn">צור תמונה</button>
+                    <button class="btn btn-accent" id="random-btn">צור אקראי</button>
+                </div>
+            </div>
+
+            <div class="result">
+                <h2 class="section-title">התוצאה</h2>
+                <div class="svg-container" id="result-container">
+                    <!-- כאן תוצג התמונה שנוצרה -->
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" id="download-btn">הורד SVG</button>
+                    <button class="btn" id="share-btn">שתף</button>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">תבניות מומלצות</h2>
+        <div class="templates" id="templates-container">
+            <!-- Templates will be generated here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 SVGיוצר - כל הזכויות שמורות</p>
+        <div class="powered-by">
+            <span>נוצר באמצעות Claude 3.7 ו-GitHub API</span>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
